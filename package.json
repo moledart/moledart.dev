@@ -7,12 +7,36 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.1.4",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "framer-motion": "^3.10.6",
+    "graphql": "^15.8.0",
+    "graphql-request": "^3.7.0",
+    "html-react-parser": "^1.4.10",
+    "moment": "^2.29.2",
+    "next": "^11.1.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-multi-carousel": "^2.6.5",
+    "sass": "^1.42.1",
+    "swr": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "8.12.0",
-    "eslint-config-next": "12.1.4"
+    "autoprefixer": "^10.3.6",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "11.1.2",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.3.8",
+    "tailwindcss": "^2.2.7"
   }
 }
