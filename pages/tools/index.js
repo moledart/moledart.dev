@@ -9,7 +9,7 @@ const Tools = ({ wikis }) => {
   return (
     <Box as="main">
       <Heading as="h1" size="xl" mb="2">
-        Tools & useful resources
+        Tools and useful resources
       </Heading>
       <Text mb="8" color="gray.600">
         This is my list of courses, sandboxes, tutorials etc. that i used throught my
