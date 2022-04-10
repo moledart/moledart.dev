@@ -32,10 +32,10 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 };
 
-export const getWorks = async () => {
+export const getWorks = async (props = null) => {
   const query = gql`
     query MyQuery {
-      worksConnection(orderBy: publishedAt_DESC) {
+      worksConnection(orderBy: publishedAt_DESC, first: ${props}) {
         edges {
           node {
             title
@@ -44,6 +44,7 @@ export const getWorks = async () => {
             github
             id
             tags {
+              id
               name
               color
             }
@@ -54,4 +55,29 @@ export const getWorks = async () => {
   `;
   const result = await request(graphqlAPI, query);
   return result.worksConnection.edges;
+};
+
+export const getWikis = async (props = null) => {
+  const query = gql`
+    query MyQuery {
+      wikisConnection(first: ${props}) {
+        edges {
+          node {
+            title
+            description
+            color
+            link
+            tags {
+              name
+              id
+              color
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+  return result.wikisConnection.edges;
 };

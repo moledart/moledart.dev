@@ -1,4 +1,5 @@
 import Head from "next/head";
+//Chakra
 import {
   Flex,
   Heading,
@@ -11,14 +12,32 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { PostCard, TagsSelection, WorkCard } from "../components/index";
-import { getPosts, getWorks } from "../services";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+//Components
+import NextLink from "next/link";
+import { WorkCard, WikisList, WorksList } from "../components/index";
+//GraphQl
+import { getPosts, getWorks, getWikis } from "../services";
+//Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTelegram, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-export default function Home({ posts, works }) {
-  console.log(works[0].node);
+export default function Home({ posts, works, wikis }) {
+  const personalLinks = [
+    {
+      href: "https://github.com/moledart",
+      icon: faGithub,
+    },
+    {
+      href: "https://t.me/moledart",
+      icon: faTelegram,
+    },
+    {
+      href: "mailto:moleand@gmail.com?subject=Mail from my website",
+      icon: faEnvelope,
+    },
+  ];
   return (
     <Box as="main">
       <Flex pb="64px" as="section">
@@ -28,21 +47,18 @@ export default function Home({ posts, works }) {
           </Heading>
           <Text color="gray.600">My name is Andrew. I am a frontend developer.</Text>
           <Wrap spacing="4" mt="auto">
-            <WrapItem>
-              <Link href="">
-                <FontAwesomeIcon size="2xl" icon={faGithub} />
-              </Link>
-            </WrapItem>
-            <WrapItem>
-              <Link href="">
-                <FontAwesomeIcon size="2xl" icon={faTelegram} />
-              </Link>
-            </WrapItem>
-            <WrapItem>
-              <Link href="">
-                <FontAwesomeIcon size="2xl" icon={faEnvelope} />
-              </Link>
-            </WrapItem>
+            {personalLinks.map((link, index) => (
+              <WrapItem key={index}>
+                <Link
+                  href={link.href}
+                  color="gray.600"
+                  isExternal
+                  _hover={{ color: "gray.800" }}
+                >
+                  <FontAwesomeIcon size="2xl" icon={link.icon} />
+                </Link>
+              </WrapItem>
+            ))}
           </Wrap>
         </Flex>
         <AspectRatio flex="1" ratio={1 / 1}>
@@ -58,20 +74,31 @@ export default function Home({ posts, works }) {
         <Heading mb="6" as="h2" fontSize="4xl">
           My work
         </Heading>
-        <Grid templateColumns="1fr 1fr" gap={4}>
-          {works.map((work) => (
-            <WorkCard key={work.node.id} work={work.node} />
-          ))}
-        </Grid>
+        <WorksList works={works} />
+        <NextLink href="/my-work" passHref>
+          <Link>
+            List of all projects <ArrowForwardIcon ml="1" />
+          </Link>
+        </NextLink>
       </Box>
-      {/* <TagsSelection posts={posts} /> */}
-      <Box as="section" pb="64px">
+      {/* <Box as="section" pb="64px">
         <Heading mb="6" as="h2" fontSize="4xl">
           Blog
         </Heading>
         {posts.map((post) => (
           <PostCard key={post.node.id} post={post.node} />
         ))}
+      </Box> */}
+      <Box as="section" pb="64px">
+        <Heading mb="6" as="h2" fontSize="4xl">
+          Tools
+        </Heading>
+        <WikisList wikis={wikis} />
+        <NextLink href="/tools" passHref>
+          <Link>
+            List of all tools <ArrowForwardIcon ml="1" />
+          </Link>
+        </NextLink>
       </Box>
     </Box>
   );
@@ -79,9 +106,10 @@ export default function Home({ posts, works }) {
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
-  const works = (await getWorks()) || [];
+  const works = (await getWorks(4)) || [];
+  const wikis = (await getWikis(4)) || [];
 
   return {
-    props: { posts, works },
+    props: { posts, works, wikis },
   };
 }

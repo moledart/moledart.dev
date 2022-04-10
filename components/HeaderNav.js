@@ -1,5 +1,5 @@
 import { Flex, Spacer, Button } from "@chakra-ui/react";
-import React, { useContext } from "react";
+import React from "react";
 import NextLink from "next/link";
 
 const navLinks = [
@@ -8,18 +8,17 @@ const navLinks = [
     title: "Home",
   },
   {
-    href: "/portfolio",
-    title: "Portfolio",
+    href: "/my-work",
+    title: "My work",
   },
-  {
-    href: "/about",
-    title: "About me",
-  },
-  {
-    href: "/blog",
-    title: "Blog",
-  },
-
+  // {
+  //   href: "/about",
+  //   title: "About me",
+  // },
+  // {
+  //   href: "/blog",
+  //   title: "Blog",
+  // },
   {
     href: "/tools",
     title: "Tools",
@@ -31,7 +30,7 @@ const HeaderNav = () => {
       <Flex alignItems="center">
         {navLinks.map((item, index) => (
           <NextLink href={item.href} passHref key={index}>
-            <Button borderRadius="8" background="gray.50">
+            <Button borderRadius="8" background="gray.50" _focus={{ border: "none" }}>
               {item.title}
             </Button>
           </NextLink>

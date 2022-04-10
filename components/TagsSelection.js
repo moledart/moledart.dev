@@ -1,14 +1,16 @@
-import { Flex, HStack } from "@chakra-ui/react";
+import { Flex, HStack, Wrap, WrapItem } from "@chakra-ui/react";
 import React from "react";
 import PostTag from "./PostTag";
 
-function TagsSelection({ tags }) {
+function TagsSelection({ tags, color }) {
   return (
-    <HStack spacing="8px" mb="2">
-      {tags.map((tag) => (
-        <PostTag key={tag.id} text={tag.name} />
+    <Wrap spacing="8px" mb="4">
+      {tags.map((tag, index) => (
+        <WrapItem key={index}>
+          <PostTag text={tag.name} color={color} />
+        </WrapItem>
       ))}
-    </HStack>
+    </Wrap>
   );
 }
 

@@ -14,7 +14,7 @@ import TagsSelection from "./TagsSelection";
 import NextLink from "next/link";
 
 const PostCard = ({ post }) => {
-  const { tags, publishedAt, excerpt, slug, thumbnail, title } = post;
+  const { tags, publishedAt, excerpt, thumbnail, title } = post;
   const options = { year: "numeric", month: "long", day: "numeric" };
   const date = new Date(publishedAt).toLocaleDateString(undefined, options);
 
