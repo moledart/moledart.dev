@@ -56,7 +56,7 @@ export default function Home({ posts, works }) {
       </Flex>
       <Box as="section" pb="64px">
         <Heading mb="6" as="h2" fontSize="4xl">
-          Work
+          My work
         </Heading>
         <Grid templateColumns="1fr 1fr" gap={4}>
           {works.map((work) => (
@@ -70,7 +70,7 @@ export default function Home({ posts, works }) {
           Blog
         </Heading>
         {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
+          <PostCard key={post.node.id} post={post.node} />
         ))}
       </Box>
     </Box>

@@ -10,12 +10,11 @@ import {
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react";
-import PostTag from "./PostTag";
 import TagsSelection from "./TagsSelection";
 import NextLink from "next/link";
 
 const PostCard = ({ post }) => {
-  const { tags, publishedAt, excerpt, slug, thumbnail, title } = post.node;
+  const { tags, publishedAt, excerpt, slug, thumbnail, title } = post;
   const options = { year: "numeric", month: "long", day: "numeric" };
   const date = new Date(publishedAt).toLocaleDateString(undefined, options);
 

@@ -1,16 +1,6 @@
 import React from "react";
 import PostTag from "./PostTag";
-import {
-  Box,
-  Heading,
-  Text,
-  Stack,
-  Flex,
-  Button,
-  Wrap,
-  WrapItem,
-  Link,
-} from "@chakra-ui/react";
+import { Heading, Text, Flex, Button, Wrap, WrapItem, Link } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -33,7 +23,7 @@ const WorkCard = ({ work }) => {
       </Text>
       <Wrap spacing="8px" mb="10">
         {tags.map((tag) => (
-          <WrapItem key={tag.id}>
+          <WrapItem key={tag.name}>
             <PostTag text={tag.name} color={tag.color} />
           </WrapItem>
         ))}
@@ -46,9 +36,9 @@ const WorkCard = ({ work }) => {
             color={github ? "black" : "lightgray"}
           />
         </Link>
-        <Button ml="4" colorScheme="teal" as="a" href={link} isExternal>
-          Visit website
-        </Button>
+        <Link ml="4" _hover={{ textDecoration: "none" }} as="a" href={link} isExternal>
+          <Button colorScheme="teal">Visit website</Button>
+        </Link>
       </Flex>
     </Flex>
   );
