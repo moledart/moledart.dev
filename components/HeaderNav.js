@@ -31,7 +31,7 @@ const HeaderNav = () => {
       <Flex alignItems="center">
         {navLinks.map((item, index) => (
           <NextLink href={item.href} passHref key={index}>
-            <Button borderRadius="8" background="white">
+            <Button borderRadius="8" background="gray.50">
               {item.title}
             </Button>
           </NextLink>

@@ -15,29 +15,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const WorkCard = ({ work }) => {
-  const { title, description, link, github, tags, color } = work;
+  const { title, description, link, github, tags } = work;
   return (
     <Flex
       direction="column"
-      px="6"
-      py="4"
+      p="6"
       border="1px"
       borderColor="gray.200"
-      borderRadius="xl"
-      //   boxShadow="sm"
-      //   background="gray.50"
+      borderRadius="md"
+      background="white"
     >
-      <Heading
-        size="md"
-        mb="2"
-        fontWeight="semibold"
-        color="gray.900"
-        fontSize="2xl"
-        as="h3"
-      >
+      <Heading mb="2" fontWeight="bold" color="gray.900" fontSize="xl" as="h3">
         {title}
       </Heading>
-      <Text lineHeight="1.2" mb="4">
+      <Text lineHeight="1.2" mb="8" color="gray.600">
         {description}
       </Text>
       <Wrap spacing="8px" mb="10">
