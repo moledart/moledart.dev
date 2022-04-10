@@ -71,7 +71,7 @@ export default function Home({ posts, works, wikis }) {
         </AspectRatio>
       </Flex>
       <Box as="section" pb="64px">
-        <Heading mb="6" as="h2" fontSize="4xl">
+        <Heading mb="6" as="h2" fontSize="4xl" fontWeight="700">
           My work
         </Heading>
         <WorksList works={works} />
@@ -90,7 +90,7 @@ export default function Home({ posts, works, wikis }) {
         ))}
       </Box> */}
       <Box as="section" pb="64px">
-        <Heading mb="6" as="h2" fontSize="4xl">
+        <Heading mb="6" as="h2" fontSize="4xl" fontWeight="700">
           Tools
         </Heading>
         <WikisList wikis={wikis} />
