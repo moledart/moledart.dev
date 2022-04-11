@@ -9,7 +9,7 @@ const WorkCard = ({ work }) => {
   return (
     <Flex
       direction="column"
-      p="6"
+      p={["4", "6"]}
       border="1px"
       borderColor="gray.200"
       borderRadius="md"
@@ -18,10 +18,10 @@ const WorkCard = ({ work }) => {
       <Heading mb="2" fontWeight="bold" color="gray.900" fontSize="xl" as="h3">
         {title}
       </Heading>
-      <Text lineHeight="1.2" mb="8" color="gray.600">
+      <Text lineHeight="1.2" mb="6" color="gray.600">
         {description}
       </Text>
-      <Wrap spacing="8px" mb="10">
+      <Wrap spacing="8px" mb="12">
         {tags.map((tag) => (
           <WrapItem key={tag.name}>
             <PostTag text={tag.name} color={tag.color} />
@@ -32,7 +32,7 @@ const WorkCard = ({ work }) => {
         <Link href={github} isExternal cursor={!github ? "auto" : "pointer"}>
           <FontAwesomeIcon
             icon={faGithub}
-            size="xl"
+            size={"2xl"}
             color={github ? "black" : "lightgray"}
           />
         </Link>

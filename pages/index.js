@@ -40,13 +40,20 @@ export default function Home({ posts, works, wikis }) {
   ];
   return (
     <Box as="main">
-      <Flex pb="64px" as="section">
-        <Flex direction="column" flex="3">
-          <Heading size="xl" mb="2">
+      <Flex
+        pb="64px"
+        as="section"
+        flexDirection={["column-reverse", "row"]}
+        justifyContent="space-between"
+      >
+        <Flex direction="column">
+          <Heading size="2xl" mb={["0", "2"]}>
             Hello there👋
           </Heading>
-          <Text color="gray.600">My name is Andrew. I am a frontend developer.</Text>
-          <Wrap spacing="4" mt="auto">
+          <Text color="gray.600">
+            My name is Andrew. <br /> I am a frontend developer.
+          </Text>
+          <Wrap spacing="4" mt={["6", "auto"]}>
             {personalLinks.map((link, index) => (
               <WrapItem key={index}>
                 <Link
@@ -61,14 +68,14 @@ export default function Home({ posts, works, wikis }) {
             ))}
           </Wrap>
         </Flex>
-        <AspectRatio flex="1" ratio={1 / 1}>
-          <Image
-            src="photo.jpg"
-            alt="photo of me and my older daughter"
-            objectFit="cover"
-            borderRadius="50%"
-          />
-        </AspectRatio>
+        <Image
+          src="photo.jpg"
+          alt="photo of me and my older daughter"
+          objectFit="cover"
+          borderRadius="50%"
+          boxSize={["120px", "170px"]}
+          mb={["4", "0"]}
+        />
       </Flex>
       <Box as="section" pb="64px">
         <Heading mb="6" as="h2" fontSize="4xl" fontWeight="700">

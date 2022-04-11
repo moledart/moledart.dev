@@ -17,7 +17,7 @@ const WikiCard = ({ wiki }) => {
         background={color ? `${color}.50` : "white"}
         height="100%"
       >
-        <TagsSelection tags={tags} color="white" />
+        <TagsSelection tags={tags} color="orange" />
         <Heading mb="4" fontWeight="bold" color="gray.900" fontSize="lg" as="h3">
           {title}
         </Heading>
