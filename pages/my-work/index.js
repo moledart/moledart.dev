@@ -1,9 +1,9 @@
-import React from "react";
-import { getWorks } from "../../services";
+import React from 'react';
+import { getWorks } from '../../services';
 //Chakra
-import { Heading, Text, Box } from "@chakra-ui/react";
+import { Box, Heading, Text } from '@chakra-ui/react';
 //Components
-import { WorksList } from "../../components";
+import { WorksList } from '../../components';
 
 const MyWorks = ({ works }) => {
   return (
@@ -12,8 +12,9 @@ const MyWorks = ({ works }) => {
         My work
       </Heading>
       <Text mb="8" color="gray.600">
-        List of different projects i made. Some of them were freelance jobs, some are pet
-        projects and some were made during different courses i enrolled.
+        List of different projects I made. Some of them were freelance jobs,
+        some are pet projects and some were made during different courses I
+        enrolled.
       </Text>
       <WorksList works={works} />
     </Box>
