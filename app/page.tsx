@@ -9,7 +9,7 @@ import EmploymentCard from "@/components/jobCard";
 export default function Home() {
   return (
     <main className="grid py-10 px-6">
-      <section className="py-20">
+      <section className="py-10 md:py-20">
         <div className="flex items-center text-base text-muted-foreground gap-2">
           <p>31 y.o.</p>
           &bull;
@@ -38,7 +38,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="py-20">
+      <section className="py-10 md:py-20">
         <h2 className="mb-6">Latest work</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
@@ -46,7 +46,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="py-20">
+      <section className="py-10 md:py-20">
         <h2 className="mb-6">Employment history</h2>
         <div className="grid grid-cols-1 gap-6">
           {employment.map((job) => (
@@ -54,7 +54,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="py-20">
+      <section className="py-10 md:py-20">
         <h2 className="mb-6">Education</h2>
         <span className="text-muted-foreground text-sm">09 - 14</span>
         <h3 className="text-xl">Bachelor of Economics</h3>
