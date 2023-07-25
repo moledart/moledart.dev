@@ -28,9 +28,7 @@ export default function Home() {
             <Link
               key={href}
               href={href}
-              className={`${buttonVariants({
-                variant: "link",
-              })} gap-2 px-0 py-0`}
+              className="underline-offset-4 hover:underline px-0 flex gap-2 itmes-center text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               <Icon name={icon} className="h-5 w-5 text-muted-foreground" />
               {title}
