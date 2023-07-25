@@ -23,6 +23,17 @@ export default function ProjectCard({ project }: { project: TProject }) {
         <p className="text-sm mt-4 text-muted-foreground">
           {project.description}
         </p>
+        <div className="flex gap-1 flex-wrap mt-4">
+          {project.stack.map((tech) => (
+            <Badge
+              variant="secondary"
+              key={tech}
+              className="text-muted-foreground"
+            >
+              {tech}
+            </Badge>
+          ))}
+        </div>
       </div>
     </article>
   );
