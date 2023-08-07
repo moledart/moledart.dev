@@ -79,7 +79,7 @@ export const projects = [
     title: "zzpost",
     type: "full-time",
     description: "Local printshop website.",
-    href: "https://www.zzpost.ru/",
+    href: "https://zzpost.ru/",
     stack: ["Nuxt.js", "Bulma"],
   },
   {
