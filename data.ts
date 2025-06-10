@@ -56,26 +56,6 @@ export const projects = [
     ],
   },
   {
-    title: "artrusvek",
-    type: "freelance",
-    description: "A website for a local production company.",
-    href: "https://www.artrusvek.ru/",
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "TailwindCSS",
-      "Tanstack Query",
-      "GraphCMS",
-    ],
-  },
-  {
-    title: "natagnom",
-    type: "freelance",
-    description: "Sole entrepreneur personal web page.",
-    href: "https://www.natagnom.ru/",
-    stack: ["Astro"],
-  },
-  {
     title: "zzpost",
     type: "full-time",
     description: "Local printshop website.",
